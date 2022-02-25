@@ -2219,6 +2219,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SingleCategory",
   data: function data() {
@@ -3830,11 +3837,27 @@ var render = function () {
       ? _c(
           "ul",
           _vm._l(_vm.category.posts, function (post) {
-            return _c("li", { key: post.id }, [_vm._v(_vm._s(post.title))])
+            return _c(
+              "li",
+              { key: post.id },
+              [
+                _c(
+                  "router-link",
+                  {
+                    attrs: {
+                      to: { name: "single-post", params: { slug: post.slug } },
+                    },
+                  },
+                  [_vm._v(_vm._s(post.title))]
+                ),
+                _vm._v("\n      " + _vm._s(post.title) + "\n    "),
+              ],
+              1
+            )
           }),
           0
         )
-      : _vm._e(),
+      : _c("p", [_vm._v("Non ci sono posts associati a questa categoria")]),
   ])
 }
 var staticRenderFns = []
