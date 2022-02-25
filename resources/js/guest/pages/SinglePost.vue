@@ -16,9 +16,14 @@ export default {
   },
   created() {
     axios()
-      .get(`api/posts/${this.$route.params.slug}`)
+      .get(`/api/posts/${this.$route.params.slug}`)
       .then((response) => {
         this.post = response.data;
+        dd(response.data);
+      })
+      .catch((error) => {
+        // console.log("post not found");
+        this.$router.push({ name: "page-404" });
       });
   },
 };

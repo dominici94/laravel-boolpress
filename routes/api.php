@@ -18,5 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// api/posts
 Route::get("/posts", "Api\PostController@index");
 Route::get("/posts/{slug}", "Api\PostController@show");
+
+// api/categories
+Route::get("/categories", "Api\CategoryController@index");
+Route::get("/categories/{slug}", "Api\CategoryController@show");

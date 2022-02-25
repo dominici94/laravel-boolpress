@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <router-view></router-view>
+    <router-view :key="$route.path"></router-view>
     <!-- <div class="posts-container">
       <div class="title">
         <h2>Lista Posts</h2>
