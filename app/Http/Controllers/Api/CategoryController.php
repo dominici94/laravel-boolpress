@@ -18,6 +18,10 @@ class CategoryController extends Controller
     {
         $category = Category::where("slug", $slug)->with("posts")->first();
 
+        if (empty($category)) {
+            return response()->json(["message" => "Category not found"], 404);
+        }
+
         return response()->json($category);
     }
 }

@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <h1>{{ category.name }}</h1>
+
+    <ul v-if="category.posts.length > 0">
+      <li v-for="post in category.posts" :key="post.id">{{ post.title }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "SingleCategory",
+  data() {
+    return {
+      cateogory: {},
+    };
+  },
+  created() {
+    axios
+      .get(`/api/categories/${this.$route.params.slug}`)
+      .then((response) => {
+        this.category = response.data;
+      })
+      .catch(() => {
+        this.$router.push({ name: "page-404" });
+      });
+  },
+};
+</script>
+
+<style>
+</style>
