@@ -15,13 +15,13 @@ export default {
     };
   },
   created() {
-    axios()
+    axios
       .get(`/api/posts/${this.$route.params.slug}`)
       .then((response) => {
         this.post = response.data;
-        dd(response.data);
+        // dd(response.data);
       })
-      .catch((error) => {
+      .catch(() => {
         // console.log("post not found");
         this.$router.push({ name: "page-404" });
       });

@@ -2230,7 +2230,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "SingleCategory",
   data: function data() {
     return {
-      cateogory: {}
+      category: {}
     };
   },
   created: function created() {
@@ -2275,10 +2275,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios().get("/api/posts/".concat(this.$route.params.slug)).then(function (response) {
-      _this.post = response.data;
-      dd(response.data);
-    })["catch"](function (error) {
+    axios.get("/api/posts/".concat(this.$route.params.slug)).then(function (response) {
+      _this.post = response.data; // dd(response.data);
+    })["catch"](function () {
       // console.log("post not found");
       _this.$router.push({
         name: "page-404"
@@ -3741,7 +3740,7 @@ var render = function () {
               {
                 attrs: {
                   to: {
-                    name: "SingleCategory",
+                    name: "single-category",
                     params: { slug: category.slug },
                   },
                 },
@@ -20153,7 +20152,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\matti\OneDrive\Desktop\esercitazioni\laravel-boolpress\resources\js\guest\front.js */"./resources/js/guest/front.js");
+module.exports = __webpack_require__(/*! C:\Users\matti\Documents\BOOLEAN\laravel-esercitazioni\laravel-boolpress\laravel-boolpress\resources\js\guest\front.js */"./resources/js/guest/front.js");
 
 
 /***/ })

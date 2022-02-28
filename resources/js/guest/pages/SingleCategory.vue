@@ -20,7 +20,7 @@ export default {
   name: "SingleCategory",
   data() {
     return {
-      cateogory: {},
+      category: {},
     };
   },
   created() {
