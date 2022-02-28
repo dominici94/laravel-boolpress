@@ -20,7 +20,9 @@ export default {
   name: "SingleCategory",
   data() {
     return {
-      category: {},
+      category: {
+        posts: [],
+      },
     };
   },
   created() {

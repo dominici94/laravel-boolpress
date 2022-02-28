@@ -2230,7 +2230,9 @@ __webpack_require__.r(__webpack_exports__);
   name: "SingleCategory",
   data: function data() {
     return {
-      category: {}
+      category: {
+        posts: []
+      }
     };
   },
   created: function created() {
