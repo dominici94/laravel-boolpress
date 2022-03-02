@@ -21,6 +21,7 @@
                                 <th scope="col">Slug</th>
                                 <th scope="col">Stato</th>
                                 <th scope="col">Categoria</th>
+                                <th scope="col">Commenti da approvare</th>
                                 <th scope="col">Azioni</th>
                             </tr>
                         </thead>
@@ -46,6 +47,11 @@
                                         @else
                                             Nessuna
                                         @endif
+                                    </td>
+                                    <td>
+                                        {{count($post->comments->filter( function($value, $key){
+                                            return $value->approved == 0;
+                                        }))}}
                                     </td>
                                     <td>
                                         <a href="{{route("posts.show", $post->id)}}"><button type="button" class="btn btn-success">Visualizza</button></a>
