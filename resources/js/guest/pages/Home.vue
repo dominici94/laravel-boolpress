@@ -16,5 +16,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 30px;
+}
 </style>
